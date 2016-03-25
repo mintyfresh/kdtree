@@ -21,7 +21,10 @@ struct KDPoint(size_t k, T) if(k > 0)
 
     double distanceSq(KDPoint!(k, T) other) const
     {
-        return iota(0, k).map!(i => state[i]).sum;
+        return iota(0, k)
+            .map!(i => state[i] - other.state[i])
+            .map!"a ^^ 2"
+            .sum;
     }
 
     @property
