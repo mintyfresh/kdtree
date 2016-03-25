@@ -39,6 +39,11 @@ struct KDPoint(size_t k, T) if(k > 0)
     {
         return state[start .. stop];
     }
+
+    bool opEquals(KDPoint!(k, T) other) const
+    {
+        return state == other.state;
+    }
 }
 
 @property
