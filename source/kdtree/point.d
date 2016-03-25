@@ -5,7 +5,7 @@ import std.algorithm;
 import std.array;
 import std.range;
 
-struct KDPoint(size_t k, T)
+struct KDPoint(size_t k, T) if(k > 0)
 {
     T[k] state;
 
@@ -39,19 +39,19 @@ struct KDPoint(size_t k, T)
 }
 
 @property
-KDPoint!(k, T) kdPoint(size_t k, T)(T[k] point)
+KDPoint!(k, T) kdPoint(size_t k, T)(T[k] point) if(k > 0)
 {
     return KDPoint!(k, T)(point);
 }
 
 @property
-KDPoint!(k, T) kdPoint(size_t k, T)(T[] point)
+KDPoint!(k, T) kdPoint(size_t k, T)(T[] point) if(k > 0)
 {
     return KDPoint!(k, T)(point[0 .. k]);
 }
 
 @property
-KDPoint!(k, T)[] sortedOn(size_t k, T)(KDPoint!(k, T)[] points, size_t axis)
+KDPoint!(k, T)[] sortedOn(size_t k, T)(KDPoint!(k, T)[] points, size_t axis) if(k > 0)
 {
     return points.sort!((a, b) => a[axis] < b[axis]).array;
 }

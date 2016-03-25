@@ -3,13 +3,7 @@ module kdtree.node;
 
 import kdtree.point;
 
-import std.algorithm;
-import std.array;
-import std.meta;
-import std.range;
-import std.traits;
-
-struct KDNode(size_t k, T)
+struct KDNode(size_t k, T) if(k > 0)
 {
     KDPoint!(k, T) point;
 

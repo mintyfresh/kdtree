@@ -4,7 +4,7 @@ module kdtree.nearest;
 import kdtree.node;
 import kdtree.point;
 
-KDPoint!(k, T) *nearest(size_t k, T)(KDNode!(k, T) *root, KDPoint!(k, T) neighbour)
+KDPoint!(k, T) *nearest(size_t k, T)(KDNode!(k, T) *root, KDPoint!(k, T) neighbour) if(k > 0)
 {
     KDPoint!(k, T) *nearest = null;
     double nearestDistance = double.max;
