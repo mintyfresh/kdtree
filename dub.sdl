@@ -1,0 +1,6 @@
+name "kdtree"
+description "A k-dimensional tree implementation for D."
+copyright "Copyright © 2016, Mihail K"
+authors "Mihail-K"
+targetType "library"
+license "MIT"
