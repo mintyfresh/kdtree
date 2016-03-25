@@ -40,14 +40,3 @@ KDPoint!(k, T) *nearest(size_t k, T)(KDNode!(k, T) *root, KDPoint!(k, T) neighbo
 
     return nearestImpl(root, neighbour), nearest;
 }
-
-unittest
-{
-    auto root = KDNode!(1, int).build([11], [3], [5], [1]);
-
-    auto result = root.nearest([-24].kdPoint);
-
-    import std.stdio;
-    result.writeln;
-    (*result).writeln;
-}
